@@ -1,6 +1,6 @@
 # auto-cyzzc
 # OpenWrt 自用插件
-#### 使用方式（三选一）：
+#### 使用方式：
 
 添加下面代码到feeds.conf.default文件
 
