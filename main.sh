@@ -20,7 +20,7 @@ rm -rf $1
 git clone --depth 1 https://github.com/sirpdboy/luci-theme-opentopd
 git clone --depth 1 https://github.com/esirplayground/luci-app-poweroff
 git clone --depth 1 https://github.com/destan19/OpenAppFilter && mvdir OpenAppFilter
-git clone --depth 1 https://github.com/Erope/openwrt_nezha &&  mv -n openwrt_nezha/luci-app-nezha ./ ; rm -rf openwrt_nezha
+git clone --depth 1 https://github.com/Erope/openwrt_nezha && mvdir openwrt_nezha
 git clone --depth 1 https://github.com/sirpdboy/netspeedtest && mv -n netspeedtest/luci-app-netspeedtest ./ ; rm -rf netspeedtest
 
 rm -rf ./*/.git & rm -f ./*/.gitattributes
