@@ -25,6 +25,7 @@ git clone --depth 1 https://github.com/xiaorouji/openwrt-passwall
 git clone --depth 1 -b luci https://github.com/xiaorouji/openwrt-passwall passwall1 && mv -n passwall1/luci-app-passwall  ./; rm -rf passwall1
 git clone --depth 1 -b lede https://github.com/pymumu/luci-app-smartdns
 git clone --depth 1 https://github.com/jerrykuku/luci-app-vssr
+git clone --depth 1 https://github.com/jerrykuku/lua-maxminddb
 
 svn export https://github.com/vernesong/OpenClash/trunk/luci-app-openclash
 svn export https://github.com/fw876/helloworld/trunk/luci-app-ssr-plus
