@@ -5,5 +5,5 @@
 添加下面代码到feeds.conf.default文件
 
 ```bash
- src-git cyzzc https://github.com/cyzzc/auto-cyzzc
+src-git cyzzc https://github.com/cyzzc/auto-cyzzc
 ```
