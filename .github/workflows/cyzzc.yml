@@ -7,7 +7,7 @@ on:
       - '.github/workflows/cyzzc.yml'
       - 'diy/**'
   schedule:
-    - cron: 35 12 1,15 * *
+    - cron: 0 17 1,8,15,22 * *
   watch:
     types: started
   repository_dispatch:
