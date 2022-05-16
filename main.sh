@@ -20,26 +20,6 @@ rm -rf $1
 git clone --depth 1 https://github.com/sirpdboy/luci-theme-opentopd
 git clone --depth 1 https://github.com/esirplayground/luci-app-poweroff
 git clone --depth 1 https://github.com/destan19/OpenAppFilter && mvdir OpenAppFilter
-git clone --depth 1 https://github.com/sirpdboy/luci-app-advanced
-git clone --depth 1 https://github.com/xiaorouji/openwrt-passwall
-git clone --depth 1 -b luci https://github.com/xiaorouji/openwrt-passwall passwall1 && mv -n passwall1/luci-app-passwall  ./; rm -rf passwall1
-git clone --depth 1 -b lede https://github.com/pymumu/luci-app-smartdns
-git clone --depth 1 https://github.com/jerrykuku/luci-app-vssr
-git clone --depth 1 https://github.com/jerrykuku/lua-maxminddb
-
-svn export https://github.com/vernesong/OpenClash/trunk/luci-app-openclash
-svn export https://github.com/fw876/helloworld/trunk/luci-app-ssr-plus
-svn export https://github.com/immortalwrt/packages/trunk/net/smartdns
-
-git_sparse_clone master "https://github.com/immortalwrt/packages" "immpack" net/sub-web \
-net/smartdns net/dnsproxy net/haproxy net/v2raya net/cdnspeedtest \
-net/subconverter net/ngrokc net/oscam net/njitclient net/scutclient net/gost net/gowebdav \
-admin/bpytop libs/jpcre2 libs/wxbase libs/rapidjson libs/libcron libs/quickjspp libs/toml11 \
-utils/cpulimit utils/filebrowser
-
-mv -n openwrt-passwall/* ./ ; rm -Rf openwrt-passwall
-
-sed -i 's/+libcap /+libcap +libcap-bin /' luci-app-openclash/Makefile
 
 rm -rf ./*/.git & rm -f ./*/.gitattributes
 rm -rf ./*/.svn & rm -rf ./*/.github & rm -rf ./*/.gitignore
