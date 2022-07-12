@@ -21,6 +21,7 @@ git clone --depth 1 https://github.com/sirpdboy/luci-theme-opentopd
 git clone --depth 1 https://github.com/esirplayground/luci-app-poweroff
 git clone --depth 1 https://github.com/destan19/OpenAppFilter && mvdir OpenAppFilter
 git clone --depth 1 https://github.com/AlexZhuo/luci-app-bandwidthd.git
+git clone --depth 1 https://github.com/sbwml/luci-app-mosdns.git && mvdir luci-app-mosdns.git
 
 rm -rf ./*/.git & rm -f ./*/.gitattributes
 rm -rf ./*/.svn & rm -rf ./*/.github & rm -rf ./*/.gitignore
