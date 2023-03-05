@@ -28,6 +28,9 @@ git clone --depth 1 https://github.com/vernesong/OpenClash && mv -n OpenClash/lu
 git clone --depth 1 https://github.com/fw876/helloworld && mv -n helloworld/luci-app-ssr-plus helloworld/naiveproxy ./ ; rm -rf helloworld
 git clone --depth 1 -b lede https://github.com/pymumu/luci-app-smartdns
 git clone --depth 1 https://github.com/jerrykuku/luci-app-vssr
+svn export https://github.com/fw876/helloworld/trunk/lua-neturl
+git clone --depth 1 https://github.com/jerrykuku/lua-maxminddb
+
 
 
 rm -rf ./*/.git & rm -f ./*/.gitattributes
