@@ -27,6 +27,7 @@ git clone --depth 1 https://github.com/sirpdboy/netspeedtest speedtest && mv -f 
 git clone --depth 1 https://github.com/vernesong/OpenClash && mv -n OpenClash/luci-app-openclash ./; rm -rf OpenClash
 git clone --depth 1 https://github.com/fw876/helloworld && mv -n helloworld/luci-app-ssr-plus helloworld/naiveproxy ./ ; rm -rf helloworld
 git clone --depth 1 -b lede https://github.com/pymumu/luci-app-smartdns
+git clone --depth 1 https://github.com/jerrykuku/luci-app-vssr
 
 
 rm -rf ./*/.git & rm -f ./*/.gitattributes
