@@ -24,13 +24,24 @@ git clone --depth 1 https://github.com/AlexZhuo/luci-app-bandwidthd.git
 # git clone --depth 1 https://github.com/QiuSimons/openwrt-mos && mv -n openwrt-mos/*mosdns ./ ; rm -rf openwrt-mos
 git clone --depth 1 https://github.com/sirpdboy/luci-app-advanced
 git clone --depth 1 https://github.com/sirpdboy/netspeedtest speedtest && mv -f speedtest/*/ ./ && rm -rf speedtest
-git clone --depth 1 https://github.com/vernesong/OpenClash && mv -n OpenClash/luci-app-openclash ./; rm -rf OpenClash
-git clone --depth 1 https://github.com/fw876/helloworld && mv -n helloworld/luci-app-ssr-plus helloworld/naiveproxy ./ ; rm -rf helloworld
 git clone --depth 1 -b lede https://github.com/pymumu/luci-app-smartdns
 git clone --depth 1 https://github.com/jerrykuku/luci-app-vssr
-svn export https://github.com/fw876/helloworld/trunk/lua-neturl
 git clone --depth 1 https://github.com/jerrykuku/lua-maxminddb
 
+
+svn export https://github.com/vernesong/OpenClash/trunk/luci-app-openclash
+svn export https://github.com/fw876/helloworld/trunk/sagernet-core
+svn export https://github.com/fw876/helloworld/trunk/luci-app-ssr-plus
+svn export https://github.com/fw876/helloworld/trunk/lua-neturl
+svn export https://github.com/fw876/helloworld/trunk/redsocks2
+svn export https://github.com/fw876/helloworld/trunk/microsocks
+svn export https://github.com/fw876/helloworld/trunk/lua-neturl
+svn export https://github.com/immortalwrt/packages/trunk/net/smartdns
+
+net/smartdns net/dnsproxy net/haproxy net/v2raya net/cdnspeedtest \
+
+
+sed -i 's/+libcap /+libcap +libcap-bin /' luci-app-openclash/Makefile
 
 
 rm -rf ./*/.git & rm -f ./*/.gitattributes
