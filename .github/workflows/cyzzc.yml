@@ -1,5 +1,4 @@
-
-name: Sync packages
+name: Packages
 
 on:
   push:
@@ -8,15 +7,14 @@ on:
       - 'diy/**'
   workflow_dispatch:
   schedule:
-    - cron: 15 0 * * 0
+    - cron: 10 5/6 * * *
   watch:
     types: started
   repository_dispatch:
 
 jobs:
-  build:
-    if: github.event.repository.owner.id == github.event.sender.id || ! github.event.sender.id
-    runs-on: Ubuntu-20.04
+  check:
+    runs-on: ubuntu-latest
 
     name: Update ${{matrix.target}}
     strategy:
@@ -26,7 +24,7 @@ jobs:
 
     steps:
     - name: Checkout
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with:
         fetch-depth: 0
 
@@ -40,12 +38,13 @@ jobs:
       run: |
         cd $GITHUB_WORKSPACE
         chmod +x ${{matrix.target}}.sh
-        git clone -b ${{matrix.target}} https://github.com/cyzzc/auto-cyzzc.git ${{matrix.target}}
+        git clone -b ${{matrix.target}} https://github.com/Cyzzc1288/Cyzzc-Package.git ${{matrix.target}}
         cd ${{matrix.target}}
         git rm -r --cache * >/dev/null 2>&1 &
         rm -rf `find ./* -maxdepth 0 -type d ! -name "diy"` >/dev/null 2>&1
         $GITHUB_WORKSPACE/${{matrix.target}}.sh
-    - name: Upload cyzzc
+
+    - name: Upload cyzzc-package
       env: 
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
       run: |
@@ -54,12 +53,10 @@ jobs:
         cd $GITHUB_WORKSPACE/${{matrix.target}}
         git add .
         git commit -am "update $(date +%Y-%m-%d" "%H:%M:%S)"
-        git push --quiet "https://${{ secrets.ACCESS_TOKEN }}@github.com/cyzzc/auto-cyzzc.git" HEAD:${{matrix.target}}
+        git push --quiet "https://${{ secrets.ACCESS_TOKEN }}@github.com/Cyzzc1288/Cyzzc-Package.git" HEAD:${{matrix.target}}
                
     - name: Delete workflow runs
-      uses: Mattraks/delete-workflow-runs@main
+      uses: Mattraks/delete-workflow-runs@v2
       with:
-        token: ${{ github.token }}
-        repository: ${{ github.repository }}
         retain_days: 1
-        keep_minimum_runs: 3
+        keep_minimum_runs: 1
