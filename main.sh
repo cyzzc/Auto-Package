@@ -17,26 +17,27 @@ function mvdir() {
 mv -n `find $1/* -maxdepth 0 -type d` ./
 rm -rf $1
 }
+git clone --depth 1 https://github.com/AlexZhuo/luci-app-bandwidthd
+git clone --depth 1 https://github.com/sirpdboy/netspeedtest && mvdir netspeedtest
+git clone --depth 1 https://github.com/xiaorouji/openwrt-passwall
+git clone --depth 1 -b luci-smartdns-new-version https://github.com/xiaorouji/openwrt-passwall passwall && mv -n passwall/luci-app-passwall ./;rm -rf passwall
 git clone --depth 1 https://github.com/sirpdboy/luci-theme-opentopd
 git clone --depth 1 https://github.com/esirplayground/luci-app-poweroff
 git clone --depth 1 https://github.com/destan19/OpenAppFilter && mvdir OpenAppFilter
-git clone --depth 1 https://github.com/AlexZhuo/luci-app-bandwidthd.git
-# git clone --depth 1 https://github.com/QiuSimons/openwrt-mos && mv -n openwrt-mos/*mosdns ./ ; rm -rf openwrt-mos
 git clone --depth 1 https://github.com/sirpdboy/luci-app-advanced
-git clone --depth 1 https://github.com/sirpdboy/netspeedtest speedtest && mv -f speedtest/*/ ./ && rm -rf speedtest
 git clone --depth 1 -b lede https://github.com/pymumu/luci-app-smartdns
 git clone --depth 1 https://github.com/jerrykuku/luci-app-vssr
 git clone --depth 1 https://github.com/jerrykuku/lua-maxminddb
+git clone --depth 1 https://github.com/QiuSimons/openwrt-mos && mv -n openwrt-mos/*mosdns ./ ; rm -rf openwrt-mos
+git clone --depth 1 https://github.com/cyzzc/openwrt_nezha && mvdir openwrt_nezha
 
+svn export https://github.com/immortalwrt/packages/trunk/net/smartdns
 svn export https://github.com/vernesong/OpenClash/trunk/luci-app-openclash
 svn export https://github.com/fw876/helloworld/trunk/sagernet-core
 svn export https://github.com/fw876/helloworld/trunk/luci-app-ssr-plus
 svn export https://github.com/fw876/helloworld/trunk/lua-neturl
 svn export https://github.com/fw876/helloworld/trunk/redsocks2
 svn export https://github.com/fw876/helloworld/trunk/microsocks
-svn export https://github.com/fw876/helloworld/trunk/lua-neturl
-svn export https://github.com/immortalwrt/packages/trunk/net/smartdns
-
 
 mv -n openwrt-passwall/* ./ ; rm -Rf openwrt-passwall
 mv -n openwrt-package/* ./ ; rm -Rf openwrt-package
@@ -50,10 +51,6 @@ sed -i \
 -e 's?\.\./\.\./luci.mk?$(TOPDIR)/feeds/luci/luci.mk?' \
 -e 's/ca-certificates/ca-bundle/' \
 */Makefile
-
-
-
-find -type f -name Makefile -exec sed -ri  's#mosdns[-_]neo#mosdns#g' {} \;
 
 bash diy/create_acl_for_luci.sh -a >/dev/null 2>&1
 bash diy/convert_translation.sh -a >/dev/null 2>&1
