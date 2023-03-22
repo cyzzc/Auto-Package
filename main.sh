@@ -38,6 +38,8 @@ svn export https://github.com/fw876/helloworld/trunk/luci-app-ssr-plus
 svn export https://github.com/fw876/helloworld/trunk/lua-neturl
 svn export https://github.com/fw876/helloworld/trunk/redsocks2
 svn export https://github.com/fw876/helloworld/trunk/microsocks
+svn export https://github.com/fw876/helloworld/trunk/gn
+svn export https://github.com/fw876/helloworld/trunk/v2raya
 
 mv -n openwrt-passwall/* ./ ; rm -Rf openwrt-passwall
 mv -n openwrt-package/* ./ ; rm -Rf openwrt-package
