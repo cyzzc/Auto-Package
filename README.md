@@ -1,4 +1,4 @@
-# auto-cyzzc
+# Auto-Package
 # OpenWrt 自用插件
 #### 使用方式：
 
