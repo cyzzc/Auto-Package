@@ -41,8 +41,6 @@ svn export https://github.com/fw876/helloworld/trunk/microsocks
 svn export https://github.com/fw876/helloworld/trunk/gn
 svn export https://github.com/fw876/helloworld/trunk/v2raya
 
-git_sparse_clone master "https://github.com/immortalwrt/packages" "immpack" net/sub-web \
-net/smartdns net/dnsproxy net/haproxy net/v2raya net/cdnspeedtest \
 
 mv -n openwrt-passwall/* ./ ; rm -Rf openwrt-passwall
 mv -n openwrt-package/* ./ ; rm -Rf openwrt-package
