@@ -1126,7 +1126,6 @@ flush_ipset() {
 		destroy_ipset ${_name}
 	done
 	rm -rf /tmp/singbox_passwall*
-	rm -rf /tmp/etc/passwall_tmp/smartdns*
 	rm -rf /tmp/etc/passwall_tmp/dnsmasq*
 	/etc/init.d/passwall reload
 }
