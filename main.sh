@@ -17,9 +17,9 @@ function mvdir() {
 mv -n `find $1/* -maxdepth 0 -type d` ./
 rm -rf $1
 }
-git clone --depth 1 https://github.com/AlexZhuo/luci-app-bandwidthd
+# git clone --depth 1 https://github.com/AlexZhuo/luci-app-bandwidthd
 # git clone --depth 1 https://github.com/sirpdboy/netspeedtest && mvdir netspeedtest
-git clone --depth 1 https://github.com/vernesong/OpenClash && mvdir OpenClash
+# git clone --depth 1 https://github.com/vernesong/OpenClash && mvdir OpenClash
 git clone --depth 1 https://github.com/xiaorouji/openwrt-passwall-packages && mvdir openwrt-passwall-packages
 git clone --depth 1 -b luci-smartdns-dev https://github.com/xiaorouji/openwrt-passwall passwall && mv -n passwall/luci-app-passwall ./;rm -rf passwall
 git clone --depth 1 https://github.com/sirpdboy/luci-theme-opentopd
@@ -31,19 +31,20 @@ git clone --depth 1 -b lede https://github.com/pymumu/luci-app-smartdns
 # git clone --depth 1 https://github.com/jerrykuku/lua-maxminddb
 # git clone --depth 1 https://github.com/QiuSimons/openwrt-mos && mv -n openwrt-mos/*mosdns ./ && mv -n openwrt-mos/dat ./ ; rm -rf openwrt-mos
 # git clone --depth 1 https://github.com/cyzzc/openwrt_nezha && mvdir openwrt_nezha
-git clone --depth 1 -b main https://github.com/fw876/helloworld helloworld && mv -n helloworld/luci-app-ssr-plus ./ && mv -n helloworld/lua-neturl ./ && mv -n helloworld/shadow-tls ./ && mv -n helloworld/redsocks2 ./;rm -rf helloworld
+# git clone --depth 1 -b main https://github.com/fw876/helloworld helloworld && mv -n helloworld/luci-app-ssr-plus ./ && mv -n helloworld/lua-neturl ./ && mv -n helloworld/shadow-tls ./ && mv -n helloworld/redsocks2 ./;rm -rf helloworld
 # git clone --depth 1 https://github.com/sirpdboy/luci-theme-kucat
 # git clone --depth 1 https://github.com/sirpdboy/luci-app-advancedplus
 
 svn export https://github.com/immortalwrt/packages/trunk/net/smartdns
-#svn export https://github.com/vernesong/OpenClash/trunk/luci-app-openclash
-svn export https://github.com/fw876/helloworld/trunk/sagernet-core
-#svn export https://github.com/fw876/helloworld/trunk/luci-app-ssr-plus
-svn export https://github.com/fw876/helloworld/trunk/lua-neturl
-svn export https://github.com/fw876/helloworld/trunk/redsocks2
-svn export https://github.com/fw876/helloworld/trunk/microsocks
-svn export https://github.com/fw876/helloworld/trunk/gn
-svn export https://github.com/fw876/helloworld/trunk/v2raya
+# svn export https://github.com/vernesong/OpenClash/trunk/luci-app-openclash
+# git clone --depth 1 https://github.com/sirpdboy/luci-app-advancedplus
+# svn export https://github.com/fw876/helloworld/trunk/sagernet-core
+# svn export https://github.com/fw876/helloworld/trunk/luci-app-ssr-plus
+# svn export https://github.com/fw876/helloworld/trunk/lua-neturl
+# svn export https://github.com/fw876/helloworld/trunk/redsocks2
+# svn export https://github.com/fw876/helloworld/trunk/microsocks
+# svn export https://github.com/fw876/helloworld/trunk/gn
+# svn export https://github.com/fw876/helloworld/trunk/v2raya
 
 git_sparse_clone master "https://github.com/immortalwrt/packages" "immpack" net/sub-web \
 net/smartdns net/dnsproxy net/haproxy net/v2raya net/cdnspeedtest \
