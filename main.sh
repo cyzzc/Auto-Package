@@ -37,8 +37,6 @@ git clone --depth 1 https://github.com/fw876/helloworld && mv -n helloworld/{luc
 # git clone --depth 1 https://github.com/sirpdboy/luci-app-advancedplus
 
 svn export https://github.com/immortalwrt/packages/trunk/net/smartdns
-svn export https://github.com/vernesong/OpenClash/trunk/luci-app-openclash
-# git clone --depth 1 https://github.com/sirpdboy/luci-app-advancedplus
 
 git_sparse_clone master "https://github.com/immortalwrt/packages" "immpack" net/sub-web \
 net/smartdns net/dnsproxy net/haproxy net/v2raya net/cdnspeedtest \
