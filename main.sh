@@ -30,7 +30,7 @@ git clone --depth 1 -b lede https://github.com/pymumu/luci-app-smartdns
 # git clone --depth 1 https://github.com/cyzzc/luci-app-vssr
 # git clone --depth 1 https://github.com/jerrykuku/lua-maxminddb
 # git clone --depth 1 https://github.com/QiuSimons/openwrt-mos && mv -n openwrt-mos/*mosdns ./ && mv -n openwrt-mos/dat ./ ; rm -rf openwrt-mos
-git clone --depth 1 https://github.com/QiuSimons/openwrt-mos mvdir openwrt-mos
+git clone --depth 1 https://github.com/QiuSimons/openwrt-mos && mvdir openwrt-mos
 git clone --depth 1 https://github.com/cyzzc/openwrt_nezha && mvdir openwrt_nezha
 git clone --depth 1 https://github.com/fw876/helloworld && mv -n helloworld/{luci-app-ssr-plus,tuic-client,shadow-tls,redsocks2,lua-neturl} ./ ; rm -rf helloworld
 # git clone --depth 1 https://github.com/sirpdboy/luci-theme-kucat
