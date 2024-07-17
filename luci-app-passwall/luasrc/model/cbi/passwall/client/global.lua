@@ -273,6 +273,20 @@ if api.is_finded("smartdns") then
 	group_domestic.description = translate("You only need to configure domestic DNS packets in SmartDNS and set it redirect or as Dnsmasq upstream, and fill in the domestic DNS group name here.")
 end
 
+o = s:taboption("DNS", Value, "direct_dns", translate("Direct DNS"))
+o.datatype = "or(ipaddr,ipaddrport)"
+o.default = ""
+o:value("", translate("Auto"))
+o:value("223.5.5.5")
+o:value("223.6.6.6")
+o:value("114.114.114.114")
+o:value("119.29.29.29")
+o:value("180.76.76.76")
+o:value("1.12.12.12")
+o:value("120.53.53.53")
+o:depends({dns_shunt = "dnsmasq"})
+o:depends({dns_shunt = "chinadns-ng"})
+
 o = s:taboption("DNS", Flag, "filter_proxy_ipv6", translate("Filter Proxy Host IPv6"), translate("Experimental feature."))
 o.default = "0"
 
